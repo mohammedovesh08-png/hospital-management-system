@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - MediCare HMS</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="login-body"><div class="login-card"><div class="logo">🏥</div><h1>MediCare</h1><p>Hospital Management System</p>
+<form id="loginForm"><input id="username" placeholder="Username" required><input id="password" type="password" placeholder="Password" required><button class="btn primary full" type="submit">Login</button></form>
+<small>Demo: admin / admin123</small><p id="loginMsg" class="error"></p></div><script>
+document.getElementById("loginForm").addEventListener("submit",e=>{e.preventDefault();let u=username.value,p=password.value;if(u==="admin"&&p==="admin123"){localStorage.setItem("loggedIn","true");location.href="index.html"}else loginMsg.textContent="Invalid username or password";});
+</script></body></html>

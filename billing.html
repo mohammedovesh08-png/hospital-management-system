@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing - MediCare HMS</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div id="sidebar"></div><main class="main">
+<header class="topbar"><div><h1>Billing</h1><p>Create and manage patient bills</p></div><button class="menu-btn" onclick="toggleSidebar()">☰</button></header>
+<section class="panel"><h2>Create Bill</h2><form id="billForm" class="form-grid">
+<input name="patient" placeholder="Patient Name" required><input name="doctor" placeholder="Doctor Name" required>
+<input name="consultation" type="number" min="0" step="0.01" placeholder="Consultation Fee" required>
+<input name="medicine" type="number" min="0" step="0.01" placeholder="Medicine Fee" required>
+<input name="room" type="number" min="0" step="0.01" placeholder="Room Fee" required>
+<select name="payment"><option>Paid</option><option>Pending</option></select>
+<button class="btn primary" type="submit">Generate Bill</button></form></section>
+<section class="panel"><div class="panel-head"><h2>Bill History</h2><input id="billSearch" class="search" placeholder="Search patient..." oninput="renderBills()"></div>
+<div class="table-wrap"><table><thead><tr><th>Bill ID</th><th>Patient</th><th>Doctor</th><th>Total</th><th>Payment</th><th>Date</th><th>Action</th></tr></thead><tbody id="billTable"></tbody></table></div></section>
+</main><script src="js/app.js"></script><script>setupBillingPage();</script></body></html>
